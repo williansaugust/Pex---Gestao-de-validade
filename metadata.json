@@ -1,0 +1,6 @@
+{
+  "name": "Pex - Gestão de validade",
+  "short_name": "Pex",
+  "description": "Operational dashboard for pharmacy management featuring real-time monitoring, inventory tracking, and alert systems.",
+  "requestFramePermissions": []
+}
