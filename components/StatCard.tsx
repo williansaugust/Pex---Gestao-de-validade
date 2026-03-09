@@ -32,22 +32,22 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       watermark: 'text-red-500/5'
     },
     yellow: {
-      gradient: 'from-[#550c0c]/80 to-[#450a0a]/80 hover:to-[#550c0c]/90',
-      border: 'border-yellow-500/30',
-      activeBorder: 'border-yellow-400',
-      text: 'text-yellow-400',
-      glow: 'shadow-[0_0_30px_rgba(250,204,21,0.15)]',
-      iconBg: 'bg-yellow-500/10 text-yellow-400',
-      watermark: 'text-yellow-500/5'
+      gradient: 'from-[#fbbf24] to-[#f59e0b] hover:from-[#fcd34d] hover:to-[#fbbf24]', // Amarelo vibrante
+      border: 'border-yellow-600/50',
+      activeBorder: 'border-yellow-700',
+      text: 'text-yellow-950', // Texto escuro para contraste
+      glow: 'shadow-[0_0_30px_rgba(251,191,36,0.3)]',
+      iconBg: 'bg-black/10 text-yellow-900',
+      watermark: 'text-yellow-900/10'
     },
     green: {
-      gradient: 'from-[#550c0c]/80 to-[#450a0a]/80 hover:to-[#550c0c]/90',
-      border: 'border-green-500/30',
-      activeBorder: 'border-green-500',
-      text: 'text-green-500',
-      glow: 'shadow-[0_0_30px_rgba(34,197,94,0.15)]',
-      iconBg: 'bg-green-500/10 text-green-500',
-      watermark: 'text-green-500/5'
+      gradient: 'from-[#39FF14] to-[#32CD32] hover:from-[#4dfa31] hover:to-[#39FF14]', // Verde Neon
+      border: 'border-green-600/50',
+      activeBorder: 'border-green-700',
+      text: 'text-green-950', // Texto escuro para contraste
+      glow: 'shadow-[0_0_35px_rgba(57,255,20,0.4)]',
+      iconBg: 'bg-black/10 text-green-900',
+      watermark: 'text-green-900/10'
     },
   };
 
@@ -80,7 +80,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
 
         ${/* EFEITO ACESO PARA CRÍTICOS */ ''}
         ${isCritical && !isActive
-          ? 'border-yellow-500/80 bg-yellow-500/10 shadow-[0_0_25px_rgba(234,179,8,0.4)] ring-1 ring-yellow-500/20'
+          ? 'border-yellow-600/80 bg-yellow-400 shadow-[0_0_25px_rgba(251,191,36,0.5)] ring-1 ring-yellow-500/30'
           : ''
         }
 
@@ -90,21 +90,21 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     >
       {/* Header Row */}
       <div className="flex justify-between items-start mb-2 relative z-20">
-        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>
+        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'text-black' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
           {title}
         </span>
 
-        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? 'bg-white/10 text-white shadow-inner' : style.iconBg}`}>
-          <Icon size={18} className={isActive || isCritical || isExpired ? 'drop-shadow-md' : ''} />
+        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'bg-black/10 text-black' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
+          <Icon size={18} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
         </div>
       </div>
 
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-1">
-        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-white drop-shadow-[0_0_8px_rgba(234,179,8,0.6)]' : style.text)}`}>
+        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-black drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]' : (isActive && (variant === 'yellow' || variant === 'green') ? 'text-black' : style.text))}`}>
           {count}
         </span>
-        <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? 'text-white/70' : 'text-gray-600'}`}>
+        <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'text-black/70' : 'text-white/70') : 'text-gray-600'}`}>
           {label}
         </span>
       </div>
