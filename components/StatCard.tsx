@@ -102,13 +102,13 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-0.5">
         <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
-          (isCritical ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' :
-            (isActive && variant === 'green' ? 'text-[#013220] drop-shadow-[0_0_8px_rgba(1,50,32,0.4)]' :
-              (isActive && variant === 'yellow' ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' : style.text)))
+            (isCritical ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' :
+              (isActive && variant === 'green' ? 'text-[#adff2f] drop-shadow-[0_0_12px_rgba(173,255,47,0.5)]' :
+                (isActive && variant === 'yellow' ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' : style.text)))
           }`}>
           {count}
         </span>
-        <span className={`text-[9px] font-bold tracking-widest uppercase mb-0.5 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#013220]/70' : variant === 'yellow' ? 'text-[#FFFF00]/70' : 'text-white/70') : 'text-gray-600'}`}>
+        <span className={`text-[9px] font-bold tracking-widest uppercase mb-0.5 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#adff2f]/70' : variant === 'yellow' ? 'text-[#FFFF00]/70' : 'text-white/70') : 'text-gray-600'}`}>
           {label}
         </span>
       </div>
