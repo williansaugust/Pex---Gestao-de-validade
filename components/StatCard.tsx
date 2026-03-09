@@ -101,7 +101,11 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
 
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-1">
-        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' : (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text))}`}>
+        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
+            (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' :
+              (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' :
+                (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text)))
+          }`}>
           {count}
         </span>
         <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]/70' : variant === 'yellow' ? 'text-[#8b0000]/70' : 'text-white/70') : 'text-gray-600'}`}>
