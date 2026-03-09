@@ -35,19 +35,19 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       gradient: 'from-[#EAFF00] to-[#d4e600] hover:from-[#f2ff00] hover:to-[#EAFF00]', // Amarelo Fluorescente
       border: 'border-[#EAFF00]/50',
       activeBorder: 'border-[#EAFF00]',
-      text: 'text-black', // Contraste máximo
+      text: 'text-[#8b0000]', // Vermelho Escuro Brilhante (Dark Red)
       glow: 'shadow-[0_0_35px_rgba(234,255,0,0.5)]',
-      iconBg: 'bg-black/10 text-black',
-      watermark: 'text-black/10'
+      iconBg: 'bg-[#8b0000]/10 text-[#8b0000]',
+      watermark: 'text-[#8b0000]/5'
     },
     green: {
       gradient: 'from-[#00FF00] to-[#00d400] hover:from-[#33ff33] hover:to-[#00FF00]', // Verde Fluorescente
       border: 'border-[#00FF00]/50',
       activeBorder: 'border-[#00FF00]',
-      text: 'text-black', // Contraste máximo
+      text: 'text-[#00008b]', // Azul Escuro Brilhante (Dark Blue)
       glow: 'shadow-[0_0_35px_rgba(0,255,0,0.5)]',
-      iconBg: 'bg-black/10 text-black',
-      watermark: 'text-black/10'
+      iconBg: 'bg-[#00008b]/10 text-[#00008b]',
+      watermark: 'text-[#00008b]/5'
     },
   };
 
@@ -90,21 +90,21 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     >
       {/* Header Row */}
       <div className="flex justify-between items-start mb-2 relative z-20">
-        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'text-black' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
+        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]' : variant === 'yellow' ? 'text-[#8b0000]' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
           {title}
         </span>
 
-        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'bg-black/10 text-black' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
+        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#00008b]/10 text-[#00008b] shadow-[0_0_10px_rgba(0,0,139,0.3)]' : variant === 'yellow' ? 'bg-[#8b0000]/10 text-[#8b0000] shadow-[0_0_10px_rgba(139,0,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
           <Icon size={18} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
         </div>
       </div>
 
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-1">
-        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-black drop-shadow-[0_0_8px_rgba(234,255,0,0.4)]' : (isActive && (variant === 'yellow' || variant === 'green') ? 'text-black' : style.text))}`}>
+        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' : (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text))}`}>
           {count}
         </span>
-        <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'text-black/70' : 'text-white/70') : 'text-gray-600'}`}>
+        <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]/70' : variant === 'yellow' ? 'text-[#8b0000]/70' : 'text-white/70') : 'text-gray-600'}`}>
           {label}
         </span>
       </div>
