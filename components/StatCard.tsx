@@ -32,22 +32,22 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       watermark: 'text-red-500/5'
     },
     yellow: {
-      gradient: 'from-[#EAFF00] to-[#d4e600] hover:from-[#f2ff00] hover:to-[#EAFF00]', // Amarelo Fluorescente
+      gradient: 'from-theme-panel to-theme-bg hover:to-theme-panel', // Transparente como o primeito bloco
       border: 'border-[#EAFF00]/50',
       activeBorder: 'border-[#EAFF00]',
-      text: 'text-[#8b0000]', // Vermelho Escuro Brilhante (Dark Red)
+      text: 'text-[#8b0000]', // Vermelho Escuro Brilhante
       glow: 'shadow-[0_0_35px_rgba(234,255,0,0.5)]',
       iconBg: 'bg-[#8b0000]/10 text-[#8b0000]',
-      watermark: 'text-[#8b0000]/5'
+      watermark: 'text-[#EAFF00]/10'
     },
     green: {
-      gradient: 'from-[#00FF00] to-[#00d400] hover:from-[#33ff33] hover:to-[#00FF00]', // Verde Fluorescente
+      gradient: 'from-theme-panel to-theme-bg hover:to-theme-panel', // Transparente como o primeito bloco
       border: 'border-[#00FF00]/50',
       activeBorder: 'border-[#00FF00]',
-      text: 'text-[#00008b]', // Azul Escuro Brilhante (Dark Blue)
+      text: 'text-[#00008b]', // Azul Escuro Brilhante
       glow: 'shadow-[0_0_35px_rgba(0,255,0,0.5)]',
       iconBg: 'bg-[#00008b]/10 text-[#00008b]',
-      watermark: 'text-[#00008b]/5'
+      watermark: 'text-[#00FF00]/10'
     },
   };
 
@@ -80,7 +80,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
 
         ${/* EFEITO ACESO PARA CRÍTICOS */ ''}
         ${isCritical && !isActive
-          ? 'border-[#EAFF00]/80 bg-[#EAFF00] shadow-[0_0_25px_rgba(234,255,0,0.5)] ring-1 ring-[#EAFF00]/30'
+          ? 'border-[#EAFF00]/80 shadow-[0_0_25px_rgba(234,255,0,0.5)] ring-1 ring-[#EAFF00]/30'
           : ''
         }
 
