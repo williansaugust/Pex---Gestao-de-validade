@@ -42,12 +42,12 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     },
     green: {
       gradient: 'from-theme-panel to-theme-bg hover:to-theme-panel', // Transparente como o primeito bloco
-      border: 'border-[#00FF00]/50',
-      activeBorder: 'border-[#00FF00]',
-      text: 'text-[#013220]', // Verde Escuro
-      glow: 'shadow-[0_0_35px_rgba(0,255,0,0.5)]',
-      iconBg: 'bg-[#013220]/10 text-[#013220]',
-      watermark: 'text-[#013220]/10'
+      border: 'border-[#adff2f]/50', // Verde Claro (GreenYellow)
+      activeBorder: 'border-[#adff2f]',
+      text: 'text-[#adff2f]', // Verde Claro Vibrante
+      glow: 'shadow-[0_0_35px_rgba(173,255,47,0.4)]',
+      iconBg: 'bg-[#adff2f]/10 text-[#adff2f]',
+      watermark: 'text-[#adff2f]/10'
     },
   };
 
@@ -90,11 +90,11 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     >
       {/* Header Row */}
       <div className="flex justify-between items-start mb-2 relative z-20">
-        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#013220]' : variant === 'yellow' ? 'text-[#FFFF00]' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
+        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#adff2f]' : variant === 'yellow' ? 'text-[#FFFF00]' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
           {title}
         </span>
 
-        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#013220]/10 text-[#013220] shadow-[0_0_10px_rgba(1,50,32,0.3)]' : variant === 'yellow' ? 'bg-[#FFFF00]/10 text-[#FFFF00] shadow-[0_0_10px_rgba(255,255,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
+        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#adff2f]/10 text-[#adff2f] shadow-[0_0_10px_rgba(173,255,47,0.3)]' : variant === 'yellow' ? 'bg-[#FFFF00]/10 text-[#FFFF00] shadow-[0_0_10px_rgba(255,255,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
           <Icon size={15} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
         </div>
       </div>
@@ -102,9 +102,9 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-0.5">
         <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
-            (isCritical ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' :
-              (isActive && variant === 'green' ? 'text-[#013220] drop-shadow-[0_0_8px_rgba(1,50,32,0.4)]' :
-                (isActive && variant === 'yellow' ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' : style.text)))
+          (isCritical ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' :
+            (isActive && variant === 'green' ? 'text-[#013220] drop-shadow-[0_0_8px_rgba(1,50,32,0.4)]' :
+              (isActive && variant === 'yellow' ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' : style.text)))
           }`}>
           {count}
         </span>
