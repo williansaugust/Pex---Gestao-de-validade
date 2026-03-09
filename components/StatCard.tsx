@@ -32,22 +32,22 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       watermark: 'text-red-500/5'
     },
     yellow: {
-      gradient: 'from-[#fbbf24] to-[#f59e0b] hover:from-[#fcd34d] hover:to-[#fbbf24]', // Amarelo vibrante
-      border: 'border-yellow-600/50',
-      activeBorder: 'border-yellow-700',
-      text: 'text-yellow-950', // Texto escuro para contraste
-      glow: 'shadow-[0_0_30px_rgba(251,191,36,0.3)]',
-      iconBg: 'bg-black/10 text-yellow-900',
-      watermark: 'text-yellow-900/10'
+      gradient: 'from-[#EAFF00] to-[#d4e600] hover:from-[#f2ff00] hover:to-[#EAFF00]', // Amarelo Fluorescente
+      border: 'border-[#EAFF00]/50',
+      activeBorder: 'border-[#EAFF00]',
+      text: 'text-black', // Contraste máximo
+      glow: 'shadow-[0_0_35px_rgba(234,255,0,0.5)]',
+      iconBg: 'bg-black/10 text-black',
+      watermark: 'text-black/10'
     },
     green: {
-      gradient: 'from-[#39FF14] to-[#32CD32] hover:from-[#4dfa31] hover:to-[#39FF14]', // Verde Neon
-      border: 'border-green-600/50',
-      activeBorder: 'border-green-700',
-      text: 'text-green-950', // Texto escuro para contraste
-      glow: 'shadow-[0_0_35px_rgba(57,255,20,0.4)]',
-      iconBg: 'bg-black/10 text-green-900',
-      watermark: 'text-green-900/10'
+      gradient: 'from-[#00FF00] to-[#00d400] hover:from-[#33ff33] hover:to-[#00FF00]', // Verde Fluorescente
+      border: 'border-[#00FF00]/50',
+      activeBorder: 'border-[#00FF00]',
+      text: 'text-black', // Contraste máximo
+      glow: 'shadow-[0_0_35px_rgba(0,255,0,0.5)]',
+      iconBg: 'bg-black/10 text-black',
+      watermark: 'text-black/10'
     },
   };
 
@@ -80,7 +80,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
 
         ${/* EFEITO ACESO PARA CRÍTICOS */ ''}
         ${isCritical && !isActive
-          ? 'border-yellow-600/80 bg-yellow-400 shadow-[0_0_25px_rgba(251,191,36,0.5)] ring-1 ring-yellow-500/30'
+          ? 'border-[#EAFF00]/80 bg-[#EAFF00] shadow-[0_0_25px_rgba(234,255,0,0.5)] ring-1 ring-[#EAFF00]/30'
           : ''
         }
 
@@ -101,7 +101,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
 
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-1">
-        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-black drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]' : (isActive && (variant === 'yellow' || variant === 'green') ? 'text-black' : style.text))}`}>
+        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' : (isCritical ? 'text-black drop-shadow-[0_0_8px_rgba(234,255,0,0.4)]' : (isActive && (variant === 'yellow' || variant === 'green') ? 'text-black' : style.text))}`}>
           {count}
         </span>
         <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'yellow' || variant === 'green' ? 'text-black/70' : 'text-white/70') : 'text-gray-600'}`}>
