@@ -35,19 +35,19 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
       gradient: 'from-theme-panel to-theme-bg hover:to-theme-panel', // Transparente como o primeito bloco
       border: 'border-[#EAFF00]/50',
       activeBorder: 'border-[#EAFF00]',
-      text: 'text-[#8b0000]', // Vermelho Escuro Brilhante
+      text: 'text-[#FFFF00]', // Amarelo Vivo
       glow: 'shadow-[0_0_35px_rgba(234,255,0,0.5)]',
-      iconBg: 'bg-[#8b0000]/10 text-[#8b0000]',
-      watermark: 'text-[#EAFF00]/10'
+      iconBg: 'bg-[#FFFF00]/10 text-[#FFFF00]',
+      watermark: 'text-[#FFFF00]/10'
     },
     green: {
       gradient: 'from-theme-panel to-theme-bg hover:to-theme-panel', // Transparente como o primeito bloco
       border: 'border-[#00FF00]/50',
       activeBorder: 'border-[#00FF00]',
-      text: 'text-[#00008b]', // Azul Escuro Brilhante
+      text: 'text-[#013220]', // Verde Escuro
       glow: 'shadow-[0_0_35px_rgba(0,255,0,0.5)]',
-      iconBg: 'bg-[#00008b]/10 text-[#00008b]',
-      watermark: 'text-[#00FF00]/10'
+      iconBg: 'bg-[#013220]/10 text-[#013220]',
+      watermark: 'text-[#013220]/10'
     },
   };
 
@@ -90,25 +90,25 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     >
       {/* Header Row */}
       <div className="flex justify-between items-start mb-2 relative z-20">
-        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]' : variant === 'yellow' ? 'text-[#8b0000]' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
+        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#013220]' : variant === 'yellow' ? 'text-[#FFFF00]' : 'text-white') : 'text-gray-400 group-hover:text-gray-300'}`}>
           {title}
         </span>
 
-        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#00008b]/10 text-[#00008b] shadow-[0_0_10px_rgba(0,0,139,0.3)]' : variant === 'yellow' ? 'bg-[#8b0000]/10 text-[#8b0000] shadow-[0_0_10px_rgba(139,0,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
+        <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#013220]/10 text-[#013220] shadow-[0_0_10px_rgba(1,50,32,0.3)]' : variant === 'yellow' ? 'bg-[#FFFF00]/10 text-[#FFFF00] shadow-[0_0_10px_rgba(255,255,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
           <Icon size={15} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
         </div>
       </div>
 
       {/* Count Row */}
       <div className="relative z-20 flex items-baseline gap-2 mt-0.5">
-        <span className={`text-2xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
-          (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' :
-            (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' :
-              (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text)))
+        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
+            (isCritical ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' :
+              (isActive && variant === 'green' ? 'text-[#013220] drop-shadow-[0_0_8px_rgba(1,50,32,0.4)]' :
+                (isActive && variant === 'yellow' ? 'text-[#FFFF00] drop-shadow-[0_0_12px_rgba(255,255,0,0.6)]' : style.text)))
           }`}>
           {count}
         </span>
-        <span className={`text-[8px] font-bold tracking-widest uppercase mb-0.5 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]/70' : variant === 'yellow' ? 'text-[#8b0000]/70' : 'text-white/70') : 'text-gray-600'}`}>
+        <span className={`text-[9px] font-bold tracking-widest uppercase mb-0.5 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#013220]/70' : variant === 'yellow' ? 'text-[#FFFF00]/70' : 'text-white/70') : 'text-gray-600'}`}>
           {label}
         </span>
       </div>
