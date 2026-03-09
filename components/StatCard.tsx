@@ -62,7 +62,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
     <div
       onClick={onClick}
       className={`
-        relative p-4 rounded-xl transition-all duration-500 cursor-pointer overflow-hidden group
+        relative p-3 rounded-xl transition-all duration-500 cursor-pointer overflow-hidden group
         bg-gradient-to-br backdrop-blur-sm border
         ${style.gradient}
         
@@ -95,27 +95,27 @@ const StatCard: React.FC<StatCardProps> = ({ title, count, label, icon: Icon, va
         </span>
 
         <div className={`p-1.5 rounded-lg border border-white/5 transition-all duration-300 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'bg-[#00008b]/10 text-[#00008b] shadow-[0_0_10px_rgba(0,0,139,0.3)]' : variant === 'yellow' ? 'bg-[#8b0000]/10 text-[#8b0000] shadow-[0_0_10px_rgba(139,0,0,0.3)]' : 'bg-white/10 text-white shadow-inner') : style.iconBg}`}>
-          <Icon size={18} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
+          <Icon size={15} className={isActive || isCritical || isExpired ? 'drop-shadow-sm' : ''} />
         </div>
       </div>
 
       {/* Count Row */}
-      <div className="relative z-20 flex items-baseline gap-2 mt-1">
-        <span className={`text-3xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
-            (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' :
-              (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' :
-                (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text)))
+      <div className="relative z-20 flex items-baseline gap-2 mt-0.5">
+        <span className={`text-2xl font-black tracking-tight ${isExpired ? 'text-white drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]' :
+          (isCritical ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' :
+            (isActive && variant === 'green' ? 'text-[#00008b] drop-shadow-[0_0_8px_rgba(0,0,139,0.4)]' :
+              (isActive && variant === 'yellow' ? 'text-[#8b0000] drop-shadow-[0_0_8px_rgba(139,0,0,0.4)]' : style.text)))
           }`}>
           {count}
         </span>
-        <span className={`text-[9px] font-bold tracking-widest uppercase mb-1 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]/70' : variant === 'yellow' ? 'text-[#8b0000]/70' : 'text-white/70') : 'text-gray-600'}`}>
+        <span className={`text-[8px] font-bold tracking-widest uppercase mb-0.5 ${isActive || isCritical || isExpired ? (variant === 'green' ? 'text-[#00008b]/70' : variant === 'yellow' ? 'text-[#8b0000]/70' : 'text-white/70') : 'text-gray-600'}`}>
           {label}
         </span>
       </div>
 
       {/* Decorative Watermark */}
       <Icon
-        className={`absolute -bottom-6 -right-6 w-32 h-32 ${style.watermark} transform rotate-12 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-6 z-0 pointer-events-none`}
+        className={`absolute -bottom-4 -right-4 w-24 h-24 ${style.watermark} transform rotate-12 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-6 z-0 pointer-events-none`}
       />
 
       {/* Glossy Overlay for Active/Alert States */}
