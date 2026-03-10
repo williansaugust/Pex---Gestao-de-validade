@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ expiredCount = 0, onLogout, theme = 're
     { id: 'gold', name: 'Gold Luxury', color: 'bg-amber-600' },
     { id: 'amethyst', name: 'Amethyst', color: 'bg-purple-600' },
     { id: 'oceanic', name: 'Oceanic', color: 'bg-sky-600' },
-    { id: 'cyberpunk', name: 'Cyberpunk', color: 'bg-pink-600' },
+    { id: 'heavyblack', name: 'Preto Intenso', color: 'bg-black' },
     { id: 'graphite', name: 'Graphite', color: 'bg-gray-600' },
   ];
 

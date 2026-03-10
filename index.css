@@ -75,16 +75,16 @@
   --panel-border: rgba(14, 165, 233, 0.15);
 }
 
-[data-theme='cyberpunk'] {
-  --bg-main: #09090b;
-  --bg-gradient-top: #27272a;
-  --bg-gradient-mid: #18181b;
-  --bg-panel: rgba(24, 24, 27, 0.6);
-  --accent: #ec4899;
-  --accent-hover: #f472b6;
-  --accent-glow: rgba(236, 72, 153, 0.5);
-  --text-accent: #f9a8d4;
-  --panel-border: rgba(236, 72, 153, 0.2);
+[data-theme='heavyblack'] {
+  --bg-main: #000000;
+  --bg-gradient-top: #111111;
+  --bg-gradient-mid: #080808;
+  --bg-panel: rgba(15, 15, 15, 0.7);
+  --accent: #ffffff;
+  --accent-hover: #cccccc;
+  --accent-glow: rgba(255, 255, 255, 0.2);
+  --text-accent: #ffffff;
+  --panel-border: rgba(255, 255, 255, 0.15);
 }
 
 [data-theme='graphite'] {
