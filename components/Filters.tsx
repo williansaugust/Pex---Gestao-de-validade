@@ -185,7 +185,7 @@ const Filters: React.FC<FiltersProps> = ({
           {/* New Product Button - Integrated here */}
           <button
             onClick={onNewProduct}
-            className="group relative flex items-center gap-2 px-5 h-[42px] rounded-lg text-xs font-bold uppercase tracking-wider bg-theme-accent hover:bg-theme-accent-hover text-white shadow-[0_0_15px_var(--accent-glow)] hover:shadow-[0_0_20px_var(--accent-glow)] transition-all hover:-translate-y-0.5 active:scale-95 border border-white/20 overflow-hidden whitespace-nowrap"
+            className="group relative flex items-center gap-2 px-5 h-[42px] rounded-lg text-xs font-bold uppercase tracking-wider bg-theme-accent hover:bg-theme-accent-hover text-[var(--accent-contrast)] shadow-[0_0_15px_var(--accent-glow)] hover:shadow-[0_0_20px_var(--accent-glow)] transition-all hover:-translate-y-0.5 active:scale-95 border border-white/20 overflow-hidden whitespace-nowrap"
           >
             <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 group-hover:animate-[shimmer_1s_infinite]"></div>
             <Box size={16} className="stroke-[2.5]" /> NOVO PRODUTO
